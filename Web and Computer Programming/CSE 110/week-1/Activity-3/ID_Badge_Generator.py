@@ -11,9 +11,9 @@ the ID card with the user's information.
 
 print("Please enter the following information: \n")
 # Prompt User For Their First Name
-first_name = input("Enter Your First Name: ").upper()
+first_name = input("Enter Your First Name: ").capitalize()
 # Prompt User For Their Last Name
-last_name = input("Enter Your Last Name: ").capitalize()
+last_name = input("Enter Your Last Name: ").upper()
 # Prompt User For Their Email
 email = input("Enter Your email: ").lower()
 # Prompt User For Their Phone Number
@@ -34,7 +34,7 @@ training = input("Did You Complete Advanced Training? (Yes/No): ")
 
 # Print Personal Information With Stretch Challenge
 print("\nThe ID Card is:")
-print("-" * 42)
+print("-" * 42) # Print 42 dashes
 print(f"{last_name}, {first_name}")
 print(job_title)
 print(f"ID: {ID_number}")
@@ -45,7 +45,7 @@ print("\n")
 # Stretch Challenge: formatting the string to the right to align the text
 print(f"Hair: {hair:<15} Eyes: {eye.capitalize()}") # string Formatting 15 spaces to the right
 print(f"Month: {month:<14} Training: {training.capitalize()}") # string Formatting 14 spaces to the right
-print("-" * 42)
+print("-" * 42) # Print 42 dashes
 
 # End Of Program
 
