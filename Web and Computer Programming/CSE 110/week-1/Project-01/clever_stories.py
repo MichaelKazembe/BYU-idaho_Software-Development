@@ -7,6 +7,7 @@ The user will be prompted to enter an adjective, animal, verb, exclamation, and 
 The program will then generate a story using the user's input.
 
 """
+
 # Stretch Challenge: Added three more prompts for a fruit and two adjectives
 # Also added a conditional statement to check if the second adjective starts with a vowel
 # Welcome Message and Instructions to the User
@@ -29,6 +30,7 @@ verb_2 = input("Enter another verb: ").lower()
 verb_3 = input("Enter another verb: ").lower()
 
 # Stretch Challenge
+
 # Prompt User For A Noun and convert it to lowercase
 fruit = input("Enter a fruit: ").lower()
 # Prompt User For An Adjective and convert it to lowercase
