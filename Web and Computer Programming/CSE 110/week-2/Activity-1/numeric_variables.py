@@ -20,7 +20,7 @@ print(f"You will be {age_next_year} on your next birthday.")
 # Assume each carton holds 12 eggs, multiply their number by 12, 
 # and display the total number of eggs.
 
-egg_cartons = int(input("How many egg cartons do you have? "))
+egg_cartons = int(input("\nHow many egg cartons do you have? "))
 total_eggs = egg_cartons * 12
 print(f"You have {total_eggs} eggs in total.")
 
