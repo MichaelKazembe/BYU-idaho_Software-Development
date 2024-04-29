@@ -10,6 +10,7 @@ The program will then generate a story using the user's input.
 
 # Stretch Challenge: Added three more prompts for a fruit and two adjectives
 # Also added a conditional statement to check if the second adjective starts with a vowel
+
 # Welcome Message and Instructions to the User
 print("Welcome to Clever Stories! This program generates a fun story based on your input.\n")
 
