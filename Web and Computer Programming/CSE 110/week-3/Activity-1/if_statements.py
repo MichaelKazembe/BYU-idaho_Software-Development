@@ -11,8 +11,8 @@ This program demonstrates the use of if statements in Python.
 
 # Prompt the user to enter two numbers
 
-first_num = int(input("Enter the first number: "))
-second_num = int(input("Enter the second number: "))
+first_num = float(input("Enter the first number: "))
+second_num = float(input("Enter the second number: "))
 
 # Compare the two numbers and display the result
 
