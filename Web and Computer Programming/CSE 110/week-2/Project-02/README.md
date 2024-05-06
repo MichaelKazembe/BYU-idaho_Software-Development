@@ -1,11 +1,10 @@
 **AUTHOR:  MICHAEL KAZEMBE**
 
-**DATE:  23/04/2024**
+**DATE:  2/05/2024**
 
 **COURSE:  CSE 110 - Introduction to Programming**
 
 **INSTRUCTOR:  CHAD OWENS**
-
 
 ## Project 02: Meal Price Calculator
 

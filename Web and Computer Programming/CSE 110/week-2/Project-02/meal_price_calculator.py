@@ -77,7 +77,7 @@ tip = total_price * (tip_percentage / 100)
 print(f"Tip: ${tip:.2f}")
 
 # Calculate the change
-change = payment - total_price - tip
+change = payment - (total_price + tip)
 
 # Display the change
 print(f"Change: ${change:.2f}")

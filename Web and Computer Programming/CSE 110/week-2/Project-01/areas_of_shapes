@@ -1,0 +1,45 @@
+"""
+area_calculator.py
+This program calculates the area of a square, rectangle, and circle.
+
+"""
+
+# For the Stretch Challenge,
+# I will prompt the user to enter the length of the square, the length and width of the rectangle, and the radius of the circle. 
+# I will then compute the area of each shape in square centimeters and square meters. 
+
+# AREA OF SQUARE
+
+# Prompt the user to enter the length of the square.
+square_length = float(input('What is the length of the square in centimeters? \n'))
+# Compute the area of the square in square centimeters.
+square_area_cm = square_length ** 2
+print(f'The area of the square is: {square_area_cm:.2f} cm^2. \n')
+# compute the area of the square in square meters.
+square_area_meters = square_area_cm / 10000
+print(f'The area of the square in square meters is: {square_area_meters:.2f} m^2. \n')
+
+#  AREA OF RECTANGLE
+
+# Prompt the user to enter the length and width of the rectangle.
+rect_length = float(input('What is the length of the rectangle in cm? \n'))
+rect_width = float(input('What is the width of the rectangle in cm? \n'))
+# Compute the area of the rectangle in square centimeters.
+rect_area_cm = rect_length * rect_width
+print(f'The area of the rectangle in square cm is : {rect_area_cm:.2f} cm^2. \n')
+# Compute the area of the rectangle in square meters.
+rect_area_m = rect_area_cm / 10000
+print(f'The area of the rectangle in square meters is: {rect_area_m:.2f} m^2. \n')
+
+# AREA OF CIRCLE
+
+# Prompt the user to enter the radius of the circle.
+radius = float(input('What is the radius of the circle? '))
+# import the math module to use the value of pi.
+from math import pi
+# Compute the area of the circle in square centimeters.
+circle_area_cm = pi * radius ** 2
+print(f'The area of the circle in square cm is: {circle_area_cm:.2f} cm^2. \n')
+# Compute the area of the circle in square meters.
+circle_area_meters = circle_area_cm / 10000
+print(f'The area of the circle in square meters is: {circle_area_meters:.2f} m^2. \n')
