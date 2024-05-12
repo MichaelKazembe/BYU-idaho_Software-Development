@@ -1,157 +1,122 @@
 """
 AUTHOR: MICHAEL KAZEMBE
-DATE: 10/05/2024
+DATE: 12/05/2024
 
 adventure_game.py
 
-Text-based game that takes you to various destinations based on
-your choices
+This is a text-based adventure game where you explore a dark cave 
+and make choices to progress through the story.
 
 """
 
-# Level 1: Main Storyline
+# This is a text-based adventure game where you explore a dark cave 
+# and make choices to progress through the story.
 
-# scenario
-print("#" * 50)
-print(" MYSTERIOUS DESTINATION!")
-print("You have 3 choices to pick from. For each choice")
-print("you will be taken through 3 Levels")
-print("#" * 50)
+# Start of Program
+def start_game():
+    # Introduce the Game
+    print("*" * 40)
+    print("*{:^38}*".format("WELCOME TO THE ADVENTURE GAME!"))
+    print("*" * 40)
+    print("{:^40}".format("You find yourself in a dark cave."))
+    print("{:^40}".format("There are two paths ahead of you."))
+    print("*" * 40)
 
-# Prompt user to choose an option
-choice = input("Choose option (A), option (B) or option (C):" )
-print(f"You chose option {choice}!")
+    while True:
+        choice = input("\nWhich path will you take? LEFT or RIGHT: ")
+        # Handle choice regardless of upper/lower/mixed case
+        choice = choice.lower()
 
-
-# Choice A
-if choice == "A":
-    print("You are now presented with 3 Scenarios")
-    print("Think Carefully before you make a choice")
-
-    # Level 2: Story Branching
-    scenario = input("Choose Scenario(1), Scenario(2), Scenario(3)")
-    # Scenario 1 for choice A
-    if scenario == '1':
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 1")
-        elif deep_1 == 'B':
-            print("You have reached destination 2")
+        # Handle user choices
+        if choice == "left":
+            # Takes user to level 1 of the game
+            level_1()
+            break
+        elif choice == "right":
+            print("\nYou chose the right path. It was a dead end.")
         else:
-            print("You have reached destination 3")
+            # Handle invalid user input
+            print("\nInvalid choice. Please choose 'left' or 'right'.")
 
-    # Scenario 2 for choice B
-    elif scenario == '2':
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 4")
-        elif deep_1 == 'B':
-            print("You have reached destination 5")
+
+# LEVEL 1
+def level_1():
+    print("\nYou enter a room with two doors.")
+    print("One door is red, and the other is blue.")
+
+    while True:
+        choice = input("\nWhich door will you choose? RED OR BLUE: ")
+        # Handle choice regardless of upper/lower/mixed case
+        choice = choice.lower()
+
+        # Handle user choices
+        if choice == "red":
+            # Takes user to level 2 of the game
+            level_2()
+            break
+        elif choice == "blue":
+            print("\nYou chose the blue door. It leads to a treasure room!")
+            print("You grab all the diamonds you can manage to carry.")
+            print("\n*** Congratulations, YOU WIN! ***")
+            break
         else:
-            print("You have reached destination 6") 
+            # Handle invalid user input
+            print("\nInvalid choice. Please choose 'RED' or 'BLUE'.")
 
-    # Scenario 3 for choice B
-    else:
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 7")
-        elif deep_1 == 'B':
-            print("You have reached destination 8")
+
+# LEVEL 2
+def level_2():
+    print("\nYou are in a room with a giant spider.")
+    print("There is a sword on the ground and a door behind the spider.")
+
+    while True:
+        choice = input("\nWhat will you do? FIGHT or SNEAK): ")
+        # Handle choice regardless of upper/lower/mixed case
+        choice = choice.lower()
+
+        # Handle user choices
+        if choice == "fight":
+            print("\nYou try to fight the spider, but it's too strong.")
+            print("It uses its long jaws and fangs to spear you.")
+            print("\n*** GAME OVER!!!. Better luck next time. ***")
+            break
+        elif choice == "sneak":
+            print("\nYou sneak past the spider and through the door.")
+            # Takes user to level 3 of the game
+            level_3()
+            break
         else:
-            print("You have reached destination 9") 
+            # Handle invalid user input
+            print("\nInvalid choice. Please choose 'FIGHT' or 'SNEAK'.")
 
-# Choice B
-elif choice == "B":
-    print("You are now presented with 3 Scenarios")
-    print("Think Carefully before you make a choice")
 
-    # Level 2: Story Branching
-    scenario = input("Choose Scenario(1), Scenario(2), Scenario(3)")
-    # Scenario 1 for choice A
-    if scenario == '1':
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 10")
-        elif deep_1 == 'B':
-            print("You have reached destination 11")
+# LEVEL 3
+def level_3():
+    print("\nYou find yourself in a treasure room.")
+    print("There are piles of gold and precious jewels everywhere.")
+    print("You hear a noise behind you. You're startled!")
+
+    while True:
+        choice = input("\nWhat will you do? LOOK or LEAVE: ")
+        # Handle choice regardless of upper/lower/mixed case
+        choice = choice.lower()
+
+        # Handle user choices
+        if choice == "look":
+            print("\nYou turn around and see a scary beast with a huge hammer")
+            print("It charges towards you and squashes you with its hammer!")
+            print("GAME OVER!!!. Better luck next time.")
+            break
+        elif choice == "leave":
+            print("\nYou grab some treasure and escape the room.")
+            print("\n*** Congratulations, YOU WIN!!! ***")
+            break
         else:
-            print("You have reached destination 12")
+            # Handle invalid user input
+            print("\nInvalid choice. Please choose 'LOOK' or 'LEAVE'.")
 
-    # Scenario 2 for choice B
-    elif scenario == '2':
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 13")
-        elif deep_1 == 'B':
-            print("You have reached destination 14")
-        else:
-            print("You have reached destination 15") 
 
-    # Scenario 3 for choice B
-    else:
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 16")
-        elif deep_1 == 'B':
-            print("You have reached destination 17")
-        else:
-            print("You have reached destination 18")
+# Start the game
+start_game()
 
-# Choice C
-elif choice == 'C':
-    print("You are now presented with 3 Scenarios")
-    print("Think Carefully before you make a choice")
-
-    # Level 2: Story Branching
-    scenario = input("Choose Scenario(1), Scenario(2), Scenario(3)")
-    # Scenario 1 for choice A
-    if scenario == '1':
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 19")
-        elif deep_1 == 'B':
-            print("You have reached destination 20")
-        else:
-            print("You have reached destination 21")
-
-    # Scenario 2 for choice B
-    elif scenario == '2':
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 22")
-        elif deep_1 == 'B':
-            print("You have reached destination 23")
-        else:
-            print("You have reached destination 24") 
-
-    # Scenario 3 for choice B
-    else:
-        print("You are now into scenario 1")
-        # Level 3: Destination
-        deep_1 = input(" Go Deeper into next level: Choose A, B , C ")
-        if deep_1 == 'A':
-            print("You have reached destination 25")
-        elif deep_1 == 'B':
-            print("You have reached destination 26")
-        else:
-            print("You have reached destination 27")
-
-else:
-    print("You entered a wrong choice!")
-    print("Please Restart Game")
+# End of Program
