@@ -81,6 +81,7 @@ def word_puzzle():
     if num_of_guesses == max_guesses:
         print("Sorry, you've run out of guesses.")
         print(f"The secret word was {secret_word.upper()}. Better luck next time!")
+        print(f"You made {num_of_guesses} guesses.")
 
 # Call the word_puzzle function
 word_puzzle()
