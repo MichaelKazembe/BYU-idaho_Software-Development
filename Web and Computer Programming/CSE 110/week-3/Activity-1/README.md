@@ -1,14 +1,4 @@
-**AUTHOR:  MICHAEL KAZEMBE**
-
-**DATE:  06/05/2024**
-
-**COURSE:  CSE 110: Introduction to Programming**
-
-**INSTRUCTOR:  CHAD OWENS**
-
-# Activity Instructions
-
-Practice writing programs that compare strings and numbers.
+ice writing programs that compare strings and numbers.
 
 #### Comparing Numbers
 
