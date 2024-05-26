@@ -9,72 +9,102 @@ along with their prices
 
 """
 
-"""
-
-Have menu system that repeats until the user chooses quit.
-
-Create a list that will store the actions of the items in the shopping cart.
-
-Complete the option to add the action of the item to the list.
-
-Complete the option to display the actions of the items in the list.
-
-"""
+# STRETCH CHALLENGE
+# Added price, quantity and subtotal of individual items
+# Added formatting when viewing the cart
+# Added a message when the cart is empty
+# Added a message when the item number is invalid
+# Added a message when the cart is empty
+# Added a message when the action is invalid
 
 # START PROGRAM
 
-# DEFINE a function shopping_cart():
 def shopping_cart():
-    # PRINT welcome screen 
-    print("Welcome to the Shopping Cart Program!\n")
-    # INITIALIZE empty list called items
+    print("=" * 40)
+    print(" " * 5 + "🛒  WELCOME TO SHOPPING CART 🛒")
+    print("=" * 40)
+
     items = []
-    # INITIALIZE empty list called prices
-    princes = []
+    prices = []
+    quantities = []
+    sub_total = []
 
-    # INITIALIZE empty variable called action
-    action = ""
-
-    # LOOP indefinitely:
-    while (action != 5):
-        # PRINT OPTIONS
+    while True:
+        # Welcome Screen
+        print("-" * 40)
         print("Please select one of the following:")
-        print("1. Add item")
-        print("2. View cart")
-        print("3. Remove item")
-        print("4. Compute total")
-        print("5. Quit")
+        print(" " * 5 + "1. Add item")
+        print(" " * 5 + "2. View cart")
+        print(" " * 5 + "3. Remove item")
+        print(" " * 5 + "4. Compute total")
+        print(" " * 5 + "5. Quit")
+        print("-" * 40)
+
         # PROMPT user to enter an action
-        # STORE the user input in variable action
         action = int(input("Please enter an action: "))
-    
-        # IF action is 1:
-        if (action == 1):
-            # PROMPT user to enter item
-            name = input("What item would you like to add? ")
-            # APPEND item to items 
-            items.append(name)
-            # FOR item in items
-            for item in items:
-            # PRINT item
-                print(f"'{item.capitalize()}' has been added to the cart.\n")
 
-        # IF action is 2:
-        if (action == 2):
-            if (len(items) > 0):
+        # ADD item to cart
+        if action == 1:
+            # PROMPT user to enter item and price
+            name = input("What item would you like to add? ").capitalize()
+            number_of_items = int(input(f"How many '{name}' are there? "))
+            cost = float(input(f"What is the price of '{name}'? "))
+
+            items.append(name) # Add the item to the list
+            quantities.append(number_of_items) # Add the quantity to the list
+            prices.append(cost) # Add the price to the list
+
+            sub_price = number_of_items * cost # Calculate the subtotal of the item
+            sub_total.append(sub_price) # Add the subtotal to the list
+
+            print(f"'{name}' has been added to the cart.\n")
+
+        # VIEW cart contents
+        elif action == 2:
+            if len(items) > 0:
+                # Display the contents of the shopping cart
                 print("The contents of the shopping cart are:")
-                for item in items:
-                    print(f"{item}")
+                print("-" * 46)
+                print(f"{'No.':<4} {'Item':<15} {'Qty':<5} {'Price':<10} {'Subtotal':<10}")
+                print("-" * 46)
+                
+                # Display the items in the shopping cart
+                for i in range(len(items)):
+                    print(f"{i + 1:<4} {items[i]:<15} {quantities[i]:<5} ${prices[i]:<10.2f} ${sub_total[i]:<10.2f}")
+                print("-" * 48)
             else:
-                print("Your shopping cart is empty! Please add some items")
+                print("\nYour shopping cart is empty! Please add some items first.")
 
-        # IF action is 5:
-        if (action == 5):
-            # PRINT goodbye message
+        # REMOVE items
+        elif action == 3:
+            index_to_remove = int(input("Which item would you like to remove? (Enter the item number) "))
+            if 1 <= index_to_remove <= len(items): # Check if the item number is valid
+                index_to_remove -= 1  # Convert to zero-based index
+                removed_item = items.pop(index_to_remove) # Remove the item from the list
+                removed_quantity = quantities.pop(index_to_remove) # Remove the quantity from the list
+                removed_price = prices.pop(index_to_remove) # Remove the price from the list
+                removed_sub_total = sub_total.pop(index_to_remove) # Remove the sub_total from the list
+                print(f"You removed item'{removed_item}' of quantity {removed_quantity} costing ${removed_sub_total:.2f} from the cart.")
+            else:
+                print(f"\nInvalid item number. You have {len(items)} items in the cart!")
+
+        # COMPUTE total
+        elif action == 4:
+            if len(prices) > 0:
+                total = sum(sub_total) # Calculate the total price of the items in the shopping cart
+                print(f"The total price of the items in the shopping cart is ${total:.2f}")
+            else:
+                print("\nYour shopping cart is empty! Please add some items first.")
+
+        # QUIT
+        elif action == 5:
             print("Thank you. Goodbye!")
-            # BREAK the loop
             break
+
+        # INVALID option
+        else:
+            print("Invalid action. Please enter a number between 1 and 5.")
 
 shopping_cart()
 
-# END
+# END OF PROGRAM
