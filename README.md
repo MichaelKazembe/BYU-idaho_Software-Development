@@ -1,2 +1,3 @@
 # BYU-idaho_Software-Development
-BYU-Idaho Software Development Degree
+
+I document my coding journey while pursuing a degree in Software Development at BYU-Idaho.
