@@ -1,10 +1,11 @@
 """
 AUTHOR: MICHAEL KAZEMBE
-DATE: 23/05/2024
+DATE: 5/06/2024
 
 windchill_calculator.py
 
-A program that calculates windchill in Fahrenheit using Temperature and wind speed
+A program that calculates windchill in Fahrenheit using Temperature(Fahrenheit or Celsius)
+and wind speed
 
 """
 # START PROGRAM
