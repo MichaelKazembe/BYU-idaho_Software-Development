@@ -17,11 +17,11 @@ file_path = 'life-expectancy.csv'
 
 # Initialize variables to store the overall lowest and highest life expectancy
 # values and their corresponding year and country
-overall_min_life_expectancy = float('inf')
+overall_min_life_expectancy = 120
 overall_min_country = ""
 overall_min_year = ""
 
-overall_max_life_expectancy = float('-inf')
+overall_max_life_expectancy = -120
 overall_max_country = ""
 overall_max_year = ""
 
@@ -145,7 +145,7 @@ if os.path.exists(file_path):
             average_life_expectancy = total_life_expectancy / count
             print(f"\nFor the year {user_year}:")
             print(f"The average life expectancy across all countries was {average_life_expectancy:.2f}")
-            print(f"The max life expectancy was in {year_max_country} with {year_max_life_expectancy}")
+            print(f"The max life expectancy was in {year_max_country} with {year_max_life_expectancy:>2f}")
             print(f"The min life expectancy was in {year_min_country} with {year_min_life_expectancy}")
         else:
             print(f"No data available for the year {user_year}")
