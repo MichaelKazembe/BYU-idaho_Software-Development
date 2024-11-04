@@ -15,6 +15,8 @@ from datetime import datetime
 # Get the current day of the week from the computer's operating system
 day = datetime.now().weekday()
 subtotal = 0
+discount_rate = 0.01 #10% tax rate
+tax_rate = 0.06 #6% tax rate
 
 while True:
     price = float(input("Enter the price: "))
@@ -27,15 +29,15 @@ while True:
         print(f"Subtotal: ${subtotal:.2f}")
 
         if subtotal >= 50 and (day == 0 or day == 1):
-            discount = subtotal * 0.01
+            discount = subtotal * discount_rate
             subtotal -= discount 
-            sales_tax = subtotal * 0.06
+            sales_tax = subtotal * tax_rate
             total = subtotal + sales_tax
              
             # Print the discount, sales tax and total    
-            print(f"Discount ${discount:.2f}")
-            print(f"Sales tax ${sales_tax:.2f}")
-            print(f"Total ${total:.2f}")
+            print(f"Discount amount: ${discount:.2f}")
+            print(f"Sales tax amount: ${sales_tax:.2f}")
+            print(f"Total: ${total:.2f}")
                 
         else:
             additional_amount = 50 - subtotal
