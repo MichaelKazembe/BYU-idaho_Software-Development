@@ -76,8 +76,8 @@ def main():
             
     # Print the best storage and cost efficiencies.
     print()
-    print("Best can size in storage efficiency:", best_store)
-    print("Best can size in cost efficiency:", best_cost)
+    print(f"Best can size in storage efficiency: {best_store}")
+    print(f"Best can size in cost efficiency: {best_cost}")
         
        
 def compute_volume(radius, height):
