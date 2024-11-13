@@ -10,7 +10,7 @@ Program that computes and prints the storage efficiency 12 steel can sizes
 
 """
 # Import the math module
-from math import pi as PI
+from math import pi as PI       
 
 def main():
     """
@@ -36,6 +36,12 @@ def main():
         0.22, 0.26, 1.53, 0.34, 0.38, 0.42
     ]
     
+    # Initialize the best storage efficiency and cost efficiency
+    best_store = None
+    best_cost = None
+    max_store_efficiency = -1
+    max_cost_efficiency = -1 
+    
     # Loop through the list of can sizes and compute the storage efficiency and cost efficiency
     for i in range(len(can_names)):
         name = can_names[i]
@@ -50,6 +56,28 @@ def main():
         # Print the results
         print_results(name, storage_efficiency, cost_efficiency)
         print()
+        
+        
+        # If the storage efficiency of the current can size is
+        # greater than the maximum storage efficiency, save then
+        # the current can size name and its storage efficiency.
+        
+        if storage_efficiency > max_store_efficiency:
+            best_store = name
+            max_store_efficiency = storage_efficiency
+            
+        # If the cost efficiency of the current can size is
+        # greater than the maximum cost efficiency, then save
+        # the current can size name and its cost efficiency.
+        
+        if cost_efficiency > max_cost_efficiency:
+            best_cost = name
+            max_cost_efficiency = cost_efficiency
+            
+    # Print the best storage and cost efficiencies.
+    print()
+    print("Best can size in storage efficiency:", best_store)
+    print("Best can size in cost efficiency:", best_cost)
         
        
 def compute_volume(radius, height):
