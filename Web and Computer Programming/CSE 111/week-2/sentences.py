@@ -52,6 +52,24 @@ def get_determiner(quantity):
     word = random.choice(words)
     return word
 
+
+def get_adjective():
+    """
+    Returns a randomly chosen adjective from the list of adjectives
+    
+    """
+    
+    adjectives = [
+        "beautiful", "fiery", "vigilant", "charming", "vibrant",
+        "adventerous", "new", "resilient", "sophisticated",
+        "enthuasistic", "meticulous", "energetic", "tenacious",
+        "old", "brilliant", "determined"
+    ]
+    
+    adjective = random.choice(adjectives)
+    return adjective
+
+
 def get_noun(quantity):
     """Return a randomly chosen noun.
     If quantity is 1, this function will
@@ -78,6 +96,7 @@ def get_noun(quantity):
             "birds", "boys", "cars", "cats", "children",
             "dogs", "girls", "men", "rabbits", "women"
         ]
+        
     noun= random.choice(nouns)
     return noun
 
@@ -131,6 +150,54 @@ def get_verb(quantity, tense):
     tense = random.choice(verbs)
     return tense
 
+
+def get_preposition():
+    """Return a randomly chosen preposition
+    from this list of prepositions:
+        "about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"
+    Return: a randomly chosen preposition.
+    """
+    
+    prepositons = [
+        "about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"
+    ]
+    
+    prepositon = random.choice(prepositons)
+    return prepositon
+
+
+def get_preposition_phrase(quantity):
+    """Build and return a prepositional phrase composed
+    of three words: a preposition, a determiner, and a
+    noun by calling the get_preposition, get_determiner,
+    and get_noun functions.
+    Parameter
+        quantity: an integer that determines if the
+            determiner and noun in the prepositional
+            phrase returned from this function should
+            be single or plural.
+    Return: a prepositional phrase.
+    """
+    
+    preposition = get_preposition()
+    determiner = get_determiner(quantity)
+    adjective = get_adjective()
+    noun = get_noun(quantity)
+    
+    preposition_phrase = f"{preposition} {determiner} {adjective} {noun}"
+    return preposition_phrase
+
+
 def make_sentence(quantity, tense):
     """Build and return a sentence with three words:
     a determiner, a noun, and a verb. The grammatical
@@ -141,10 +208,12 @@ def make_sentence(quantity, tense):
     """
     
     determiner = get_determiner(quantity)
+    # adjective = get_adjective()
     noun = get_noun(quantity)
     verb = get_verb(quantity, tense)
+    preposition_phrase = get_preposition_phrase(quantity)
     
-    sentence = f"{determiner} {noun} {verb}."
+    sentence = f"{determiner} {noun} {verb} {preposition_phrase}."
     capitalized_sentence = sentence.capitalize()
     return capitalized_sentence
     
