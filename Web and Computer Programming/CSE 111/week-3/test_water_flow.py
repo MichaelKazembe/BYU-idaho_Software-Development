@@ -6,7 +6,9 @@ from water_flow import water_column_height, \
     
 def test_water_column_height():
     """
-    
+    verify that water_column_height works correctly
+    parameters: none
+    returns: none
     """
     
     # Test the water_column_height function at least four times
@@ -20,7 +22,9 @@ def test_water_column_height():
 
 def test_pressure_gain_from_water_height():
     """
-    
+    verify that pressure_gain_from_water_height works correctly
+    parameters: none
+    returns: none
     """
     
     # Test the pressure_gain_from_water_height function at least four times
@@ -35,7 +39,9 @@ def test_pressure_gain_from_water_height():
     
 def test_pressure_loss_from_pipe():
     """
-    
+    verify that pressure_loss_from_pipe works correctly
+    parameters: none
+    returns: none
     """
     
     # Test the pressure_loss_from_pipe function at least four times

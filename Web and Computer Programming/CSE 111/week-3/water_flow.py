@@ -1,3 +1,15 @@
+"""
+AUTHOR: MICHAEL KAZEMBE
+DATE: 22/11/2024
+
+water_flow.py
+
+Program that calculates the height of a column of water, 
+the pressure caused by a column of water, and 
+the pressure loss from friction in a pipe.
+
+"""
+
 
 def water_column_height(tower_height, tank_height):
     """ 
@@ -10,7 +22,7 @@ def water_column_height(tower_height, tank_height):
     
     """
     
-    water_height = tower_height + (3 * tank_height) / 4
+    water_height = tower_height + ((3 * tank_height) / 4)
     return water_height
 
 
@@ -25,9 +37,9 @@ def pressure_gain_from_water_height(height):
     """
     
     water_density = 998.2 # kg/m^3
-    gravity = 9.810665 # m/s^2
+    gravity = 9.80665 # m/s^2
     
-    pressure = water_density * gravity * height/1000
+    pressure = (water_density * gravity * height)/1000
     return pressure
 
 
@@ -47,5 +59,5 @@ def pressure_loss_from_pipe(pipe_diameter,
     water_density = 998.2 # kg/m^3
     
     pressure =  - (friction_factor * pipe_length * water_density \
-                * fluid_velocity ** 2) / 2000 * pipe_diameter
+                * (fluid_velocity ** 2)) / (2000 * pipe_diameter)
     return pressure
