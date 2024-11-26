@@ -4,7 +4,8 @@ DATE: 26/11/2024
 
 test_random_numbers.py
 
-Program that creates a list of numbers and appends random numbers to the list.
+Program that creates a list of numbers and words and 
+appends random numbers and words to the list respectively.
 
 """
 # Import the random module
