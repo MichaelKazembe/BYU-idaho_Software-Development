@@ -12,7 +12,7 @@ and prints a receipt for the requested products.
 """
 
 import csv
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def main():
@@ -127,6 +127,38 @@ def get_current_date():
     return formatted_date
 
 
+def remind_new_years_sale():
+    """
+    Reminds the user how many days are left until the New Year's Sale on January 1st, 2025.
+    """
+    current_date = datetime.now()
+    new_years_date = datetime(2025, 1, 1)
+    
+    days_left = (new_years_date - current_date).days
+    
+    print(f"🎉 NEW YEAR'S SALE 🎉 in 🎇 {days_left} DAYS! 🎇")
+
+
+def return_product_by_date():
+    """
+    print a "return by" date that is 9:00 PM 
+    30 days in the future at the bottom of the receipt.
+    parameters: 
+        None
+    return:
+        None
+    """
+    future_days = 30
+    current_date = datetime.now()
+    # Set the time to 9:00 PM
+    current_date = current_date.replace(hour=21, minute=0, second=0)
+    
+    # Calculate the return date
+    return_date =  current_date + timedelta(days=future_days)
+    
+    print(f"Return by: {return_date.strftime('%a %b %d %H:%M:%S %Y')}")
+
+
 def print_receipt(order):
     """
     Print a receipt for the requested products.
@@ -158,8 +190,15 @@ def print_receipt(order):
     print(f"Sales Tax: ${total_tax:.2f}")
     print(f"Total: ${total_cost:.2f}")
     print("-" * 40)
+    print()
     print("*** Thank you for shopping at Inkom Emporium! ***")
     print(get_current_date())
+    print()
+    remind_new_years_sale()
+    print()
+    print("+" * 40)
+    return_product_by_date()
+    print("+" * 40)
     print()
 
 
