@@ -3,7 +3,7 @@ AUTHOR: MICHAEL KAZEMBE
 DATE: 11/12/2024
 
 students_registration.py
-A program that gets user input from a GUI, stores the data in a dictionary,
+A program that gets user input from a GUI, stores the data in a dictionary & csv file,
 and displays the data in a GUI.
 """
 
@@ -22,6 +22,7 @@ def add_student():
     Retrieves the ID and name from the entry widgets and adds them to the dictionary.
     Displays a success message if the student is added, otherwise shows a warning.
     """
+    
     # Get the ID and name from the entry widgets
     student_id = ent_id.get()
     name = ent_name.get()
@@ -48,6 +49,7 @@ def delete_student():
     Retrieves the ID and name from the entry widgets and deletes the student from the dictionary.
     Displays a success message if the student is deleted, otherwise shows a warning.
     """
+    
     # Get the ID and name from the entry widgets
     student_id = ent_id.get()
     name = ent_name.get()
@@ -79,6 +81,7 @@ def view_students():
     Clears the text widget and inserts each student's ID and name.
     If no students are found, displays a message indicating so.
     """
+    
     # Clear the text widget
     txt_output.delete(1.0, tk.END)
     
@@ -101,6 +104,8 @@ def clear_output():
     """
     Clears the output text widget.
     """
+    
+    # Clear the text widget
     txt_output.delete(1.0, tk.END)
 
 
@@ -108,6 +113,7 @@ def save_to_csv():
     """
     Saves the students dictionary to a CSV file.
     """
+    
     # Get the directory of the current script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     # Construct the full path to the CSV file
@@ -130,6 +136,7 @@ def load_from_csv():
     """
     Loads the students data from a CSV file into the students dictionary.
     """
+    
     # Get the directory of the current script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     # Construct the full path to the CSV file

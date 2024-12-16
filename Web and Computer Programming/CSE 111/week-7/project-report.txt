@@ -7,19 +7,21 @@ Second Report for a Student Chosen Project
 
    Date       (hours:min)   Description of Work
 ----------  ----------  -------------------------
-2024-12-12	0:5    Went through tkinter documentation
+2024-12-12	1:45   Went through tkinter documentation and practiced along example code
 2024-12-12       1:0    Read Python - GUI programming on Tutorialspoint.com website 
-2024-12-14	6:0    Read Python GUI Programming With Tkinter on 
+2024-12-14	4:0    Read Python GUI Programming With Tkinter on 
 		       https://realpython.com and practiced sample code
-2024-12-14	0:5    Read Python - GUI programming on Tutorialspoint.com website
+2024-12-14	0:35   Read Python - GUI programming on Tutorialspoint.com website
 2024-12-14	3:0    Wrote the following functions: add_student(), view_students(),
 		       delete_student(), clear_output(), main()
-2024-12-14       1:2    Debug the functions to make sure they are performing	 as intended
+2024-12-14       1:20   Debug the functions to make sure they are performing	 as intended
 2024-12-14       0:10   Watched a Youtube Video titled how to create a beautiful 
 		       Python GUI in 10 minutes
-2024-12-16	0:20   created save_to_csv() and load_from_csv() functions
-2024-12-16	1:15   Debugging the functions
-2024-12-16              Wrote tests using purest
+2024-12-16	1:20   Read python docs on csv — CSV File Reading and Writing
+		       created save_to_csv() and load_from_csv() functions
+2024-12-16	1:15   Debugging the written functions
+2024-12-16       2:50   Read pytest doc on https://docs.pytest.org/
+		       Wrote tests using pytest
 
 ==================================================
 
