@@ -2,15 +2,16 @@
 AUTHOR: MICHAEL KAZEMBE
 DATE: 11/12/2024
 
-students_app.py
+students_registration.py
 A program that gets user input from a GUI, stores the data in a dictionary,
 and displays the data in a GUI.
-
 """
 
 import tkinter as tk
 from tkinter import messagebox
 import csv
+import os
+
 
 # Dictionary to store students
 students = {}
@@ -39,6 +40,7 @@ def add_student():
     else:
         # Show warning message
         messagebox.showwarning("Input Error", "Please enter both ID and name.")
+
 
 def delete_student():
     """
@@ -70,15 +72,13 @@ def delete_student():
         # Show warning message if either ID or name is missing
         messagebox.showwarning("Input Error", "Please enter both ID and name.")
 
+
 def view_students():
     """
     Displays all students in the students dictionary.
     Clears the text widget and inserts each student's ID and name.
     If no students are found, displays a message indicating so.
-    parameters: none
-    return: none
     """
-    
     # Clear the text widget
     txt_output.delete(1.0, tk.END)
     
@@ -96,27 +96,28 @@ def view_students():
         # Show message if no students
         txt_output.insert(tk.END, "No students found.")
 
+
 def clear_output():
     """
     Clears the output text widget.
     """
-    
     txt_output.delete(1.0, tk.END)
+
 
 def save_to_csv():
     """
     Saves the students dictionary to a CSV file.
-    parameters: none
-    return: none
     """
+    # Get the directory of the current script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # Construct the full path to the CSV file
+    file_path = os.path.join(script_dir, "students.csv")
     
     # Open a file for writing
-    with open("students.csv", mode="w", newline="") as file:
+    with open(file_path, mode="w", newline="") as file:
         writer = csv.writer(file)
-        
         # Write the header
         writer.writerow(["ID", "Name"])
-        
         # Write the student data
         for student_id, name in students.items():
             writer.writerow([student_id, name])
@@ -124,16 +125,19 @@ def save_to_csv():
     # Show success message
     messagebox.showinfo("Success", "Data saved to students.csv")
 
+
 def load_from_csv():
     """
     Loads the students data from a CSV file into the students dictionary.
-    parameters: none
-    return: none
     """
+    # Get the directory of the current script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # Construct the full path to the CSV file
+    file_path = os.path.join(script_dir, "students.csv")
     
     try:
         # Open the file for reading
-        with open("students.csv", mode="r") as file:
+        with open(file_path, mode="r") as file:
             reader = csv.reader(file)
             next(reader)  # Skip the header
             
@@ -151,13 +155,11 @@ def load_from_csv():
         # Show error message if the file is not found
         messagebox.showerror("Error", "students.csv file not found")
 
+
 def main():
     """
     Main function to initialize the GUI and run the application.
-    Creates and places all the widgets in the main window.
     """
-    
-    # Declare Global Variables
     global ent_id, ent_name, txt_output 
 
     # Initialize the main window
@@ -210,6 +212,7 @@ def main():
 
     # Run the main loop
     root.mainloop()
+    
 
 if __name__ == "__main__":
     main()

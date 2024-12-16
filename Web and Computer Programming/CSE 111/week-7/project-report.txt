@@ -1,38 +1,27 @@
 Second Report for a Student Chosen Project
 
-Do the following:
 
-1. In the table below, list the dates, amount of time spent, and
-description of the work that you did on your project. Follow the example
-that is in the first row of the table below. Include the time you spent
-doing any of the following:
-    a. discussing your project with your teacher, tutor, or fellow students
-    b. researching by reading articles and watching applicable videos
-    c. designing your project by drawing diagrams and other applicable documents
-    d. writing experimental code
-    d. writing code for your project
-    e. writing test functions
-    f. debugging your code
-    g. any other activity that helped you complete your project
 
-=============Example====================
-            Time Spent
-   Date       (hours)   Description of Work
+         **** TIME SPENT ON PROJECT ****
+==================================================
+
+   Date       (hours:min)   Description of Work
 ----------  ----------  -------------------------
-2024-12-12	0.5    Went through tkinter documentation
-2024-12-12       1      Read Python - GUI programming on Tutorialspoint.com website 
-2024-12-14	6      Read Python GUI Programming With Tkinter on 
+2024-12-12	0:5    Went through tkinter documentation
+2024-12-12       1:0    Read Python - GUI programming on Tutorialspoint.com website 
+2024-12-14	6:0    Read Python GUI Programming With Tkinter on 
 		       https://realpython.com and practiced sample code
-2024-12-14	0.5    Read Python - GUI programming on Tutorialspoint.com website
-2024-12-14	3      Wrote the following functions: add_student(), view_students(),
+2024-12-14	0:5    Read Python - GUI programming on Tutorialspoint.com website
+2024-12-14	3:0    Wrote the following functions: add_student(), view_students(),
 		       delete_student(), clear_output(), main()
-2024-12-14       10     Watched a Youtube Video titled how to create a beautiful 
+2024-12-14       1:2    Debug the functions to make sure they are performing	 as intended
+2024-12-14       0:10   Watched a Youtube Video titled how to create a beautiful 
 		       Python GUI in 10 minutes
-2024-12-16	       created save_to_csv() and load_from_csv() functions
-=============Example====================
+2024-12-16	0:20   created save_to_csv() and load_from_csv() functions
+2024-12-16	1:15   Debugging the functions
+2024-12-16              Wrote tests using purest
+
+==================================================
 
 
 
-2. In Canvas, submit this completed text file, your Python program, your
-Python test file, and any project data files such as .txt and .csv files and
-link to video walkthrough if needed.
